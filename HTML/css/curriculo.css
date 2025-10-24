@@ -1,0 +1,35 @@
+
+body {
+    background-color: #000000;
+    font-family: 'Orbitron';
+}
+nav {
+    background-color: blue;
+}
+.navegacao {
+   list-style-type: none;
+   color: yellow;
+   text-decoration: none
+}
+h1, h2, h3 {
+    color: yellow;
+    margin-left: 10px;
+}
+footer {
+    color: orange;
+}
+
+#sumario {
+    color: #00ffff;
+    text-align: center;
+}
+@media(max-width: 768px){
+    .container{
+        flex-direction: column; 
+    }
+    nav {
+        width: 100%;
+        position: unset;
+        margin-left: 0px;
+    }
+}
