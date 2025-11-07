@@ -14,7 +14,7 @@ def curriculo_spiff(request):
     @param request: The HTTP request object
     @return: Rendered HTML response with resume page content
     '''
-    return render(request, 'curriculo/curriculo-v1.html')
+    return render(request, 'curriculo/curriculo-spiff.html')
 
 def curriculo_spiff_v2(request):
     '''
@@ -29,4 +29,4 @@ def curriculo_spiff_v2(request):
     @param request: The HTTP request object
     @return: Rendered HTML response with resume page version 2 content
     '''
-    return render(request, 'curriculo/curriculo-v2.html')
+    return render(request, 'curriculo/curriculo-spiff-v2.html')

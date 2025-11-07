@@ -1,8 +1,8 @@
-from django.contrib import admin
 from django.urls import path
-from MeuSite import views  
-from django.urls import include 
+from . import views
 
-app_name = 'curriculo'  
+app_name = 'curriculo'
 urlpatterns = [
+    path('spiff/', views.curriculo_spiff, name='curriculo_spiff'),
+    path('spiff/v2/', views.curriculo_spiff_v2, name='curriculo_spiff_v2'),
 ]
