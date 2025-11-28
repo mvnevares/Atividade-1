@@ -18,11 +18,22 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from MeuSite import views  
-from django.urls import include 
+from django.urls import include
+from django.contrib.auth.views import (
+    PasswordResetView,
+    PasswordResetDoneView,
+    PasswordResetConfirmView,
+    PasswordResetCompleteView,
+)
 
 urlpatterns = [
     path("admin/", admin.site.urls),
     path('', views.home, name='home'), 
     path('curriculo/', include('curriculo.urls')),
+    path('accounts/', include('django.contrib.auth.urls')),
+    path('accounts/password_reset/', PasswordResetView.as_view(), name='password_reset'),
+    path('accounts/password_reset/done/', PasswordResetDoneView.as_view(), name='password_reset_done'),
+    path('accounts/reset/<uidb64>/<token>/', PasswordResetConfirmView.as_view(), name='password_reset_confirm'),
+    path('accounts/reset/done/', PasswordResetCompleteView.as_view(), name='password_reset_complete'),
 ]
 

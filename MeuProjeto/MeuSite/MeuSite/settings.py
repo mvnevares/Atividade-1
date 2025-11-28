@@ -28,6 +28,19 @@ DEBUG = True
 ALLOWED_HOSTS = ['*']
 
 
+CSRF_TRUSTED_ORIGINS = [
+    'https://localhost:8000', 
+    'http://localhost:8000',
+    'https://localhost:8001', 
+    'http://localhost:8001',
+    
+
+]
+
+CORS_ALLOW_ALL_ORIGINS = True
+
+
+
 # Application definition
 
 INSTALLED_APPS = [
@@ -56,7 +69,7 @@ ROOT_URLCONF = "MeuSite.urls"
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [],
+        "DIRS": [BASE_DIR / "MeuSite" / "templates"],
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
@@ -122,3 +135,8 @@ STATIC_URL = "static/"
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+LOGOUT_REDIRECT_URL = '/accounts/login/'  # Para onde vai após logout
+LOGIN_URL = '/accounts/login/'       # URL de login (padrão)
+LOGIN_REDIRECT_URL = '/curriculo-spiff-V2/'   # Para onde vai após login
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'

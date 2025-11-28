@@ -1,7 +1,9 @@
 from django.shortcuts import render
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 
+@login_required
 def curriculo_spiff(request):
     '''
     View function for the astronaut Spiff's resume page.
@@ -16,6 +18,7 @@ def curriculo_spiff(request):
     '''
     return render(request, 'curriculo/curriculo-spiff.html')
 
+@login_required
 def curriculo_spiff_v2(request):
     '''
     View function for the astronaut Spiff's resume page version 2.
@@ -30,3 +33,4 @@ def curriculo_spiff_v2(request):
     @return: Rendered HTML response with resume page version 2 content
     '''
     return render(request, 'curriculo/curriculo-spiff-v2.html')
+
